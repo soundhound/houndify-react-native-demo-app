@@ -8,13 +8,17 @@ const expressWs = require("express-ws")(app);
 // Houndify React Native setup
 const { createReactNativeProxy } = require("houndify").HoundifyExpress;
 
+const clientId = "";
+const clientSecret = "";
+
+if (!clientId || !clientSecret) {
+  console.log("No ClientId or ClientSecret provided!!");
+  process.exit();
+}
+
 app.use(
   "/houndifyReactNativeProxy",
-  createReactNativeProxy(
-    express,
-    "RWPEZrnPdYC0M20gRMapBg==",
-    "lLbIS0Sk4IkKC2xfcMX_7ERqFiyzBGMvV8ycYNTIf00U3jDBLwSLhtJhLdsirB3TwXO8M1MPfQN4ycgo48tKpA=="
-  )
+  createReactNativeProxy(express, clientId, clientSecret)
 );
 
 app.listen(3000);

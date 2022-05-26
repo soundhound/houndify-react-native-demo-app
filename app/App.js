@@ -8,7 +8,6 @@ import {
   Button,
 } from 'react-native';
 import {request, check, PERMISSIONS} from 'react-native-permissions';
-// import HoundifyComponent from './hd';
 import HoundifyComponent from 'houndify-react-native';
 
 const checkPermission = () => {
@@ -35,7 +34,7 @@ export default class App extends Component {
     checkPermission();
     return (
       <SafeAreaView>
-        <Text>ok</Text>
+        <Text>Hello World!</Text>
         <HoundifyComponent
           host="ws://localhost:3000"
           onStart={() => {

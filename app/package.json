@@ -6,7 +6,7 @@
     "ios": "react-native run-ios",
     "xcode-refresh": "rm -rf ~/Library/Developer/Xcode/DerivedData",
     "podInstall": "cd ios && rm -f Podfile.lock && rm -rf Pods && pod install",
-    "start": "react-native start",
+    "start": "react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint ."
   },
